@@ -1,0 +1,31 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "Node/Express API",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "local": "nodemon --experimental-modules --es-module-specifier-resolution=node src/server.js",
+    "start": "node --experimental-modules --es-module-specifier-resolution=node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Adam Nathaniel Davis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bytebodger/tic-tac-toe/issues"
+  },
+  "homepage": "https://github.com/bytebodger/tic-tac-toe#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.0",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "moment": "^2.27.0",
+    "pg-promise": "^10.5.8"
+  }
+}
