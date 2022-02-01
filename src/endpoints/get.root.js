@@ -1,6 +1,6 @@
-import { allow } from '../shared/classes/allow';
 import { getBaseResponse } from '../shared/functions/get.base.response';
 import { is } from '../shared/objects/is';
+import { allow } from '@toolz/allow';
 
 export const getRoot = (request = {}, response = {}) => {
    allow.anObject(request, is.not.empty).anObject(response, is.not.empty);

@@ -23,6 +23,8 @@
     "nodemon": "^2.0.4"
   },
   "dependencies": {
+    "@toolz/allow": "^1.1.5",
+    "@toolz/is-a-regular-object": "^1.0.2",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "moment": "^2.27.0",
