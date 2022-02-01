@@ -1,7 +1,7 @@
 import moment from 'moment';
 
 export const getBaseResponse = () => ({
-   data: {},
    errors: [],
+   game: {},
    utc: moment.utc().format(),
 });

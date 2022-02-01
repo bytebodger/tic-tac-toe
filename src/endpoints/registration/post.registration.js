@@ -1,6 +1,6 @@
 import { getBaseResponse } from '../../shared/functions/get.base.response';
 import { is } from '../../shared/objects/is';
-import { allow } from '@toolz/allow';
+import { allow } from '../../shared/functions/allow.js';
 
 export const postRegistration = (request = {}, response = {}) => {
    let json = getBaseResponse();
