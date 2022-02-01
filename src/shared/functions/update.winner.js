@@ -28,7 +28,7 @@ export const updateWinner = (game = getNewGameObject()) => {
          && playerMoves.some(move => move.x === 2 && move.y === 0)
       )
    ) {
-      game.winner = 'Player ' + game.nextPlayerToMove;
+      game.winner = 'Winner: Player ' + game.nextPlayerToMove;
    }
    // a game with no winner after 9 moves is a draw
    if (game.moves.length === 9 && game.winner === null)

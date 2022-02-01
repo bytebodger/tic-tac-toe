@@ -45,6 +45,9 @@ export const postMove = (request = [], response = {}) => {
    // player move cannot duplicate an existing move
    if (game.moves.some(previousMove => previousMove.x === move.x && previousMove.y === move.y))
       json.errors.push('The requested move has already been taken on the board');
+   // player 0 must move first
+   if (game.moves.length === 0 && move.player !== 0)
+      json.errors.push('Player 0 must move first');
    if (json.errors.length > 0)
       return response.json(json);
    game.moves.push(move);
