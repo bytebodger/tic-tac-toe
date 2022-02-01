@@ -8,6 +8,7 @@ export const getRoot = (request = {}, response = {}) => {
    json.endpoints = {
       get: {
          "/": "Documents the behavior of this API",
+         "/game/move": "Accepts a game object and a move object and returns the most recent game object",
          "/game/start": "Returns a blank game object",
       },
    };
