@@ -1,0 +1,272 @@
+{
+   "info": {
+      "_postman_id": "fd1a650a-c377-4f69-b7ec-d30ca4153a91",
+      "name": "Tic Tac Toe",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+   },
+   "item": [
+      {
+         "name": "/",
+         "event": [
+            {
+               "listen": "test",
+               "script": {
+                  "exec": [
+                     "pm.test('Returns basic documentation', () => {\r",
+                     "    const jsonResponse = pm.response.json();\r",
+                     "    pm.response.to.have.status(200);\r",
+                     "    pm.response.to.be.ok;\r",
+                     "    pm.response.to.be.withBody;\r",
+                     "    pm.response.to.be.json;\r",
+                     "    pm.expect(jsonResponse.errors).to.be.an('array');\r",
+                     "    pm.expect(jsonResponse.errors).to.be.empty;\r",
+                     "    pm.expect(jsonResponse.game).to.be.an('object');\r",
+                     "    pm.expect(jsonResponse.game).to.be.empty;\r",
+                     "    pm.expect(jsonResponse.utc).to.be.a('string');\r",
+                     "    pm.expect(jsonResponse.endpoints.get['/']).to.be.a('string');\r",
+                     "    pm.expect(jsonResponse.endpoints.get['/game/move']).to.be.a('string');\r",
+                     "    pm.expect(jsonResponse.endpoints.get['/game/start']).to.be.a('string');\r",
+                     "})"
+                  ],
+                  "type": "text/javascript"
+               }
+            }
+         ],
+         "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+               "raw": "http://127.0.0.1:8081",
+               "protocol": "http",
+               "host": [
+                  "127",
+                  "0",
+                  "0",
+                  "1"
+               ],
+               "port": "8081"
+            }
+         },
+         "response": []
+      },
+      {
+         "name": "/game/start",
+         "event": [
+            {
+               "listen": "test",
+               "script": {
+                  "exec": [
+                     "pm.test('Returns basic documentation', () => {\r",
+                     "    const jsonResponse = pm.response.json();\r",
+                     "    pm.response.to.have.status(200);\r",
+                     "    pm.response.to.be.ok;\r",
+                     "    pm.response.to.be.withBody;\r",
+                     "    pm.response.to.be.json;\r",
+                     "    pm.expect(jsonResponse.errors).to.be.an('array');\r",
+                     "    pm.expect(jsonResponse.errors).to.be.empty;\r",
+                     "    pm.expect(jsonResponse.game).to.be.an('object');\r",
+                     "    pm.expect(jsonResponse.game.moves).to.be.an('array');\r",
+                     "    pm.expect(jsonResponse.game.moves).to.be.empty;\r",
+                     "    pm.expect(jsonResponse.game.nextPlayerToMove).to.be.eql(0);\r",
+                     "    pm.expect(jsonResponse.game.winner).to.be.eql(null);\r",
+                     "    pm.expect(jsonResponse.utc).to.be.a('string');\r",
+                     "})"
+                  ],
+                  "type": "text/javascript"
+               }
+            }
+         ],
+         "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+               "raw": "http://127.0.0.1:8081/game/start",
+               "protocol": "http",
+               "host": [
+                  "127",
+                  "0",
+                  "0",
+                  "1"
+               ],
+               "port": "8081",
+               "path": [
+                  "game",
+                  "start"
+               ]
+            }
+         },
+         "response": []
+      },
+      {
+         "name": "/game/move move01",
+         "event": [
+            {
+               "listen": "test",
+               "script": {
+                  "exec": [
+                     "pm.test('Returns basic documentation', () => {\r",
+                     "    const jsonResponse = pm.response.json();\r",
+                     "    pm.response.to.have.status(200);\r",
+                     "    pm.response.to.be.ok;\r",
+                     "    pm.response.to.be.withBody;\r",
+                     "    pm.response.to.be.json;\r",
+                     "    pm.expect(jsonResponse.errors).to.be.an('array');\r",
+                     "    pm.expect(jsonResponse.errors).to.be.empty;\r",
+                     "    pm.expect(jsonResponse.game).to.be.an('object');\r",
+                     "    pm.expect(jsonResponse.game.moves).to.be.an('array');\r",
+                     "    pm.expect(jsonResponse.game.nextPlayerToMove).to.be.eql(1);\r",
+                     "    pm.expect(jsonResponse.game.winner).to.be.eql(null);\r",
+                     "    pm.expect(jsonResponse.utc).to.be.a('string');\r",
+                     "})"
+                  ],
+                  "type": "text/javascript"
+               }
+            }
+         ],
+         "request": {
+            "method": "POST",
+            "header": [
+               {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+               }
+            ],
+            "body": {
+               "mode": "raw",
+               "raw": "{\r\n    \"game\": {\r\n        \"moves\": [],\r\n        \"nextPlayerToMove\": 0,\r\n        \"winner\": null\r\n    },\r\n    \"move\": {\r\n        \"player\": 0,\r\n        \"x\": 0,\r\n        \"y\": 0\r\n    }\r\n}"
+            },
+            "url": {
+               "raw": "http://127.0.0.1:8081/game/move",
+               "protocol": "http",
+               "host": [
+                  "127",
+                  "0",
+                  "0",
+                  "1"
+               ],
+               "port": "8081",
+               "path": [
+                  "game",
+                  "move"
+               ]
+            }
+         },
+         "response": []
+      },
+      {
+         "name": "/game/move move01 wrong player",
+         "event": [
+            {
+               "listen": "test",
+               "script": {
+                  "exec": [
+                     "pm.test('Returns basic documentation', () => {\r",
+                     "    const jsonResponse = pm.response.json();\r",
+                     "    pm.response.to.have.status(200);\r",
+                     "    pm.response.to.be.ok;\r",
+                     "    pm.response.to.be.withBody;\r",
+                     "    pm.response.to.be.json;\r",
+                     "    pm.expect(jsonResponse.errors).to.be.an('array');\r",
+                     "    pm.expect(jsonResponse.errors).to.not.be.empty;\r",
+                     "    pm.expect(jsonResponse.game).to.be.an('object');\r",
+                     "    pm.expect(jsonResponse.game.moves).to.be.an('array');\r",
+                     "    pm.expect(jsonResponse.game.nextPlayerToMove).to.be.eql(0);\r",
+                     "    pm.expect(jsonResponse.game.winner).to.be.eql(null);\r",
+                     "    pm.expect(jsonResponse.utc).to.be.a('string');\r",
+                     "})"
+                  ],
+                  "type": "text/javascript"
+               }
+            }
+         ],
+         "request": {
+            "method": "POST",
+            "header": [
+               {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+               }
+            ],
+            "body": {
+               "mode": "raw",
+               "raw": "{\r\n    \"game\": {\r\n        \"moves\": [],\r\n        \"nextPlayerToMove\": 0,\r\n        \"winner\": null\r\n    },\r\n    \"move\": {\r\n        \"player\": 1,\r\n        \"x\": 0,\r\n        \"y\": 0\r\n    }\r\n}"
+            },
+            "url": {
+               "raw": "http://127.0.0.1:8081/game/move",
+               "protocol": "http",
+               "host": [
+                  "127",
+                  "0",
+                  "0",
+                  "1"
+               ],
+               "port": "8081",
+               "path": [
+                  "game",
+                  "move"
+               ]
+            }
+         },
+         "response": []
+      },
+      {
+         "name": "/game/move move02 duplicate square",
+         "event": [
+            {
+               "listen": "test",
+               "script": {
+                  "exec": [
+                     "pm.test('Returns basic documentation', () => {\r",
+                     "    const jsonResponse = pm.response.json();\r",
+                     "    pm.response.to.have.status(200);\r",
+                     "    pm.response.to.be.ok;\r",
+                     "    pm.response.to.be.withBody;\r",
+                     "    pm.response.to.be.json;\r",
+                     "    pm.expect(jsonResponse.errors).to.be.an('array');\r",
+                     "    pm.expect(jsonResponse.errors).to.not.be.empty;\r",
+                     "    pm.expect(jsonResponse.game).to.be.an('object');\r",
+                     "    pm.expect(jsonResponse.game.moves).to.be.an('array');\r",
+                     "    pm.expect(jsonResponse.game.nextPlayerToMove).to.be.eql(1);\r",
+                     "    pm.expect(jsonResponse.game.winner).to.be.eql(null);\r",
+                     "    pm.expect(jsonResponse.utc).to.be.a('string');\r",
+                     "})"
+                  ],
+                  "type": "text/javascript"
+               }
+            }
+         ],
+         "request": {
+            "method": "POST",
+            "header": [
+               {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "type": "text"
+               }
+            ],
+            "body": {
+               "mode": "raw",
+               "raw": "{\r\n    \"game\": {\r\n        \"moves\": [\r\n            {\r\n                \"player\": 0,\r\n                \"x\": 0,\r\n                \"y\": 0\r\n            }\r\n        ],\r\n        \"nextPlayerToMove\": 1,\r\n        \"winner\": null\r\n    },\r\n    \"move\": {\r\n        \"player\": 1,\r\n        \"x\": 0,\r\n        \"y\": 0\r\n    }\r\n}"
+            },
+            "url": {
+               "raw": "http://127.0.0.1:8081/game/move",
+               "protocol": "http",
+               "host": [
+                  "127",
+                  "0",
+                  "0",
+                  "1"
+               ],
+               "port": "8081",
+               "path": [
+                  "game",
+                  "move"
+               ]
+            }
+         },
+         "response": []
+      }
+   ]
+}
